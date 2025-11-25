@@ -48,7 +48,7 @@ resource "aws_route_table_association" "sailorrtass" {
 }
 
 #################### KEYPAIR ###########################
-resource "aws_key_pair" "Vijaykp.pub" {
+resource "aws_key_pair" "Vijaykp" {
     public_key = file("/var/lib/jenkins/.ssh/Vijaykp.pub")
     key_name = "Vijaykp"
   
