@@ -1,0 +1,10 @@
+[Unit]
+Description=tomcat service
+[Service]
+Type=forking
+Environment=JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64/
+Environment=CATALINA_HOME=/middleware/apache-tomcat-9.0.75
+ExecStart=/middleware/apache-tomcat-9.0.75/bin/startup.sh
+ExecStop=/middleware/apache-tomcat-9.0.75/bin/shutdown.sh
+[Install]
+WantedBy=multi-user.target
