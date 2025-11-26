@@ -48,9 +48,9 @@ resource "aws_route_table_association" "sailorrtass" {
 }
 
 #################### KEYPAIR ###########################
-resource "aws_key_pair" "jenkins_kp" {
-    public_key = file("/var/lib/jenkins/.ssh/jenkins_kp.pub")
-    key_name = "jenkins_kp"
+resource "aws_key_pair" "jenkinsnewkp" {
+    public_key = file("/var/lib/jenkins/.ssh/jenkinsnew_kp.pub")
+    key_name = "jenkinsnewkp"
   
 }
 
