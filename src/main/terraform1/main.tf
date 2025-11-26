@@ -48,9 +48,9 @@ resource "aws_route_table_association" "sailorrtass" {
 }
 
 #################### KEYPAIR ###########################
-resource "aws_key_pair" "jenkins_key" {
+resource "aws_key_pair" "jenkins_key1" {
     public_key = file("/var/lib/jenkins/.ssh/rahamthulla.pub")
-    key_name = "jenkins_key"
+    key_name = "jenkins_key1"
   
 }
 
@@ -93,7 +93,7 @@ resource "aws_security_group" "tomcatsg" {
 resource "aws_instance" "sailorec2r" {
   #vpc_id = aws_vpc.sailorvpc.id
   subnet_id = aws_subnet.sailorpubsn.id
-  key_name = aws_key_pair.jenkins_key.key_name
+  key_name = aws_key_pair.jenkins_key1.key_name
   instance_type = "t2.micro"
   ami = "ami-02b8269d5e85954ef"
   associate_public_ip_address = "true"
