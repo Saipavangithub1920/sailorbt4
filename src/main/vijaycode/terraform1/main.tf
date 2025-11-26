@@ -90,15 +90,15 @@ resource "aws_security_group" "tomcatsg" {
 
 ############ EC2_Instance #########################
 
-resource "aws_instance" "sailorec2" {
+resource "aws_instance" "sailorec2vj" {
   #vpc_id = aws_vpc.sailorvpc.id
   subnet_id = aws_subnet.sailorpubsn.id
-  key_name = aws_key_pair.jenkins_kp.key_name
+  key_name = aws_key_pair.jenkinsnew_kp.key_name
   instance_type = "t2.micro"
   ami = "ami-02b8269d5e85954ef"
   associate_public_ip_address = "true"
   vpc_security_group_ids = [aws_security_group.sshsg.id , aws_security_group.tomcatsg.id]
   tags = {
-    Name = "sailorec2"
+    Name = "sailorec2vj"
   }
 }
